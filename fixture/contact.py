@@ -116,6 +116,18 @@ class ContactHelper:
         wd.find_element_by_name("update").click()
         self.return_to_home_page()
 
+    def delete_from_details(self):
+        wd = self.app.wd
+        wd.find_element_by_css_selector("img[alt=\"Edit\"]").click()
+        wd.find_element_by_xpath("(//input[@name='update'])[3]").click()
+        wd.find_element_by_link_text("home").click()
+
+    def delete_from_edit(self):
+        wd = self.app.wd
+        wd.find_element_by_css_selector("img[alt=\"Details\"]").click()
+        wd.find_element_by_name("modifiy").click()
+        wd.find_element_by_xpath("(//input[@name='update'])[3]").click()
+        wd.find_element_by_link_text("home").click()
 
     def return_to_home_page(self):
         wd = self.app.wd
